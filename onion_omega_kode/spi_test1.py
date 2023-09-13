@@ -8,6 +8,10 @@ spi_device = 1 # Use CS1
 spi = spidev.SpiDev()
 spi.open(spi_bus, spi_device)
 
+# Check the supported range for SPI speed
+supported_speeds = spi.max_speed_hz
+print("Supported SPI Speeds (Hz): {}".format(supported_speeds))
+
 # Set SPI speed and mode
 spi.max_speed_hz = 5000  # 20 kHz
 spi.mode = 0  # Clock is low when idle, data is read on rising edge
