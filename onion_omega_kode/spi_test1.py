@@ -9,7 +9,7 @@ spi = spidev.SpiDev()
 spi.open(spi_bus, spi_device)
 
 # Set SPI speed and mode
-spi.max_speed_hz = 20000  # 20 kHz
+spi.max_speed_hz = 100  # 20 kHz
 spi.mode = 0  # Clock is low when idle, data is read on rising edge
 
 # Read data from SPI bus
