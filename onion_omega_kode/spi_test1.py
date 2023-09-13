@@ -2,7 +2,7 @@ import spidev
 
 # Defining DPI bus and device
 spi_bus = 0 # Use SPI bus 0
-spi_device = 0 # Use CS0
+spi_device = 1 # Use CS1
 
 # Open SPI bus
 spi = spidev.SpiDev()
@@ -16,7 +16,7 @@ spi.mode = 0  # Clock is low when idle, data is read on rising edge
 try:
     while True:
         print("Reading data from SPI bus")
-        data = spi.xfer([0x00, 0x00, 0x00, 0x00])
+        data = spi.xfer3([0x00, 0x00, 0x00, 0x00])
         print(data)
 except KeyboardInterrupt:
     spi.close()
