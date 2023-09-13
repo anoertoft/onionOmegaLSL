@@ -12,8 +12,7 @@ spi.open(spi_bus, spi_device)
 supported_speeds = spi.max_speed_hz
 print("Supported SPI Speeds (Hz): {}".format(supported_speeds))
 
-# Set SPI speed and mode
-spi.max_speed_hz = 5000  # 20 kHz
+# Set SPI mode
 spi.mode = 0  # Clock is low when idle, data is read on rising edge
 
 # Read data from SPI bus
