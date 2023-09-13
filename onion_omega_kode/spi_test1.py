@@ -19,7 +19,7 @@ spi.mode = 0  # Clock is low when idle, data is read on rising edge
 try:
     while True:
         print("Reading data from SPI bus")
-        data = spi.xfer3([0x00, 0x00, 0x00, 0x00])
+        data = spi.xfer3([0x00, 0x00, 0x00, 0x00], 8)
         print(data)
 except KeyboardInterrupt:
     spi.close()
